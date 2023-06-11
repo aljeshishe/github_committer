@@ -5,7 +5,7 @@ name: CI
 # Controls when the workflow will run
 on:
   schedule:
-    - cron: '0 0 * * *' # Runs every day at midnight UTC
+    - cron: '0 23 * * *' # Runs every day at midnight UTC
     
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -23,5 +23,9 @@ jobs:
         with:
           token: ${{ secrets.WORKFLOW_GIT_ACCESS_TOKEN }}
 
-      - name: Run a one-line script
-        run: ./make_commits.sh 3
+      - name: Run script
+        run: |
+          pip install poetry
+          poetry config virtualenvs.create false
+          poetry install
+          ./make_commits.sh ${poetry run python main.py }
