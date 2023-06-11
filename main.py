@@ -27,3 +27,4 @@ pixels = list(canvas.getdata())
 # Display the colors
 for pixel in pixels:
     print(pixel)
+
