@@ -14,8 +14,6 @@ echo creating branch: ${BRANCH_NAME}
 git branch ${BRANCH_NAME}
 git push --set-upstream origin ${BRANCH_NAME}
 
-git rev-parse --verify --quiet ${BRANCH_NAME} || \
-
 for i in $( seq 1 ${COMMIT_COUNT} )
 do
 	echo "change" >> changes
