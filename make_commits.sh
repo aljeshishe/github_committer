@@ -1,7 +1,5 @@
 #!/bin/bash
-set -ex
-
-
+set -e
 trap 'echo "Last command exit code: $?"' EXIT
 
 BRANCH_NAME=commits_$(uuidgen)
@@ -12,6 +10,7 @@ git config --global user.name "Aleksei Grachev"
 git branch ${BRANCH_NAME}
 git push --set-upstream origin ${BRANCH_NAME}
 
+echo Making ${COMMIT_COUNT} commits
 for i in $( seq 1 ${COMMIT_COUNT} )
 do
 	MESSAGE=$(date "+%Y-%m-%d %H:%M:%S")
