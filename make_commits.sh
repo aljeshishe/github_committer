@@ -14,7 +14,8 @@ git push --set-upstream origin ${BRANCH_NAME}
 
 for i in $( seq 1 ${COMMIT_COUNT} )
 do
-	echo "change" >> changes
+	MESSAGE=$(date "+%Y-%m-%d %H:%M:%S")
+	echo ${MESSAGE} >> changes
 	git add changes
 	git commit -m "change"
 	git push 

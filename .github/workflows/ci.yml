@@ -23,12 +23,20 @@ jobs:
         with:
           token: ${{ secrets.WORKFLOW_GIT_ACCESS_TOKEN }}
       
+      - name: Set up python
+        id: setup-python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
       - name: Install and configure Poetry
         uses: snok/install-poetry@v1
         with:
           version: 1.5.1
           virtualenvs-create: true
           virtualenvs-in-project: false
-          
+      - name: Install project
+        run: poetry install --no-interaction
+                  
       - name: Run script
-        run: ./make_commits.sh ${poetry run python main.py }
+        run: ./make_commits.sh $(poetry run python main.py)
