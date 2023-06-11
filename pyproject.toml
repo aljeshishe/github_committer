@@ -4,7 +4,7 @@ version = "0.1.0"
 description = ""
 authors = ["Alekei Grachev <ax66@bk.ru>"]
 readme = "README.md"
-packages = [{include = "github_committer"}]
+# packages = [{include = "github_committer"}]
 
 [tool.poetry.dependencies]
 python = "^3.11"
