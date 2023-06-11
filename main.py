@@ -24,7 +24,7 @@ def get_commit_count(start_date, pixels, max_commits):
 
 
 if __name__ == '__main__':
-    START_DATE = '2023-06-10'
+    START_DATE = '2023-06-11'
     pixels = get_pixels(text='python')
     start_date = datetime.datetime.strptime(START_DATE, '%Y-%m-%d')
     count = get_commit_count(start_date=start_date, pixels=pixels, max_commits=45)
