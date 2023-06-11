@@ -6,11 +6,9 @@ trap 'echo "Last command exit code: $?"' EXIT
 
 BRANCH_NAME=commits_$(uuidgen)
 COMMIT_COUNT=${1:-2}
-#REPO=git@gitlab.alberblanc.com:trading/mlrobot.git
-#WORK_PATH=/tmp/repo_$(uuidgen)
-
 echo creating branch: ${BRANCH_NAME}
-
+git config --global user.email "ax66@bk.ru"
+git config --global user.name "Aleksei Grachev"
 git branch ${BRANCH_NAME}
 git push --set-upstream origin ${BRANCH_NAME}
 

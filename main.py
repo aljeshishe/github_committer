@@ -1,14 +1,14 @@
 from PIL import Image, ImageDraw
 
 # Create a blank canvas with a white background
-canvas = Image.new('RGB', (7, 7), (255, 255, 255))
+canvas = Image.new('RGB', (70, 7), (255, 255, 255))
 
 # Create a draw object
 draw = ImageDraw.Draw(canvas)
 
 # Define the text and font
 text = "hello"
-font_size = 12  # Adjust font size as needed
+font_size = 20  # Adjust font size as needed
 
 # Calculate the position to center the text
 text_width, text_height = draw.textsize(text)
